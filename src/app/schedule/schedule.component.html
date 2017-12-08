@@ -3,7 +3,7 @@
 
   <div class="row">
     <div *ngFor="let shift of schedule.shifts; let i = index" class="col s12 m3">
-      <div class="card" routerLink="schedule">
+      <div class="card">
         <div class="card-content">
           <span class="card-title">{{ shift.engineer?.firstName + ' ' + shift.engineer?.lastName }}</span>
           <p class="shift">Shift {{ i + 1 }} {{ i % 2 === 0 ? '(AM)' : '(PM)' }}</p>
@@ -16,5 +16,57 @@
     <a class="btn-floating btn-large" (click)="generateSchedule()">
       <i class="large material-icons">autorenew</i>
     </a>
+  </div>
+</div>
+
+<div class="loading" *ngIf="!schedule">
+  <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-red">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-yellow">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+
+    <div class="spinner-layer spinner-green">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div>
+      <div class="gap-patch">
+        <div class="circle"></div>
+      </div>
+      <div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
   </div>
 </div>

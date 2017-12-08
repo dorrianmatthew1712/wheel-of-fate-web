@@ -56,10 +56,12 @@ describe('ScheduleComponent', () => {
     fixture.componentInstance.schedule = <any>{};
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#scheduleDiv')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.loading')).toBeNull();
 
     fixture.componentInstance.schedule = null;
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#scheduleDiv')).toBeNull();
+    expect(fixture.nativeElement.querySelector('.loading')).not.toBeNull();
   });
 
   it('should display the created date in the title', () => {

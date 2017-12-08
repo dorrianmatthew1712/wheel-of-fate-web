@@ -19,8 +19,8 @@ export class EngineersComponent implements OnInit {
   }
 
   getEngineers() {
-    this.engineerService.getEngineers().subscribe(schedule => {
-      this.engineers = schedule;
+    this.engineerService.getEngineers().subscribe(engineers => {
+      this.engineers = engineers;
     }, error => {
       this.growlService.addNewGrowl('error', 'Engineers not found', 'Error retrieving the engineers');
     });

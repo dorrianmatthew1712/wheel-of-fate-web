@@ -1,5 +1,7 @@
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 import { environment } from '../../environments/';
 
 @Injectable()
@@ -9,6 +11,6 @@ export class ScheduleService {
 
     generateNewSchedule() {
         return this.http.get(`${environment.apiUrl}/create-schedule`)
-            .map(response => response.json());
+            .map((schedule: Response) => schedule.json());
     }
 }

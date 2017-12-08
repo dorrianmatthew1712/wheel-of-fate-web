@@ -1,6 +1,7 @@
-import { Observable } from 'rxjs';
 import { EventEmitter, Injectable, Output } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Response } from '@angular/http';
+import 'rxjs/add/operator/map';
+
 import { environment } from '../../environments/';
 
 @Injectable()
@@ -10,6 +11,6 @@ export class EngineerService {
 
     getEngineers() {
         return this.http.get(`${environment.apiUrl}/engineers`)
-            .map(response => response ? response.json() : Observable.of(null));
+            .map((schedule: Response) => schedule.json());
     }
 }

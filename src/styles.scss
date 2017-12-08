@@ -10,6 +10,10 @@ body {
     // background-image: url("assets/images/background_computers.png");
     background-repeat: repeat;
     margin: 0 0 50px;
+
+    a:hover {
+        text-decoration: none;
+    }
 }
 
 .bottom-footer {

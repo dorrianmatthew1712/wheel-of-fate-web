@@ -28,7 +28,7 @@ import { EngineersComponent } from './engineers/engineers.component';
     BrowserModule,
     HttpModule,
     GrowlModule,
-    RouterModule.forRoot(routes),
+    RouterModule.forRoot(routes, {useHash: true}),
   ],
   providers: [EngineerService, GrowlService, ScheduleService],
   bootstrap: [AppComponent]

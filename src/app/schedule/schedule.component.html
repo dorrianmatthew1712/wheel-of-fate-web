@@ -1,4 +1,4 @@
-<div id="scheduleDiv" *ngIf="schedule">
+<div id="scheduleDiv" *ngIf="schedule && !showLoading">
   <h5 id="title">New BAU Schedule: {{ getCreatedAt }}</h5>
 
   <div class="row">

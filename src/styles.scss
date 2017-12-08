@@ -10,9 +10,18 @@ body {
     // background-image: url("assets/images/background_computers.png");
     background-repeat: repeat;
     margin: 0 0 50px;
+}
 
-    a:hover {
-        text-decoration: none;
+a {
+    text-decoration: none !important;
+
+    &:hover {
+        color: white !important;
+    }
+
+    &:focus {
+        color: white !important;
+        outline: none !important;
     }
 }
 

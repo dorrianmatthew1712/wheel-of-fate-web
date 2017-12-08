@@ -50,4 +50,18 @@ describe('EngineersComponent', () => {
     fixture.componentInstance.getEngineers();
     expect(fixture.componentInstance.engineers).not.toBeNull();
   });
+
+  it('should show/hide the engineer details when engineers exists', () => {
+    fixture.componentInstance.engineers = <any>[];
+    fixture.componentInstance.showLoading = false;
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('#engineersDiv')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.loading')).toBeNull();
+
+    fixture.componentInstance.engineers = null;
+    fixture.componentInstance.showLoading = true;
+    fixture.detectChanges();
+    expect(fixture.nativeElement.querySelector('#engineersDiv')).toBeNull();
+    expect(fixture.nativeElement.querySelector('.loading')).not.toBeNull();
+  });
 });

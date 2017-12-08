@@ -1,4 +1,4 @@
-<div *ngIf="engineers">
+<div id="engineersDiv" *ngIf="engineers">
   <h5>Engineers</h5>
 
   <div class="row">
@@ -13,7 +13,7 @@
   </div>
 </div>
 
-<div class="loading" *ngIf="!engineers">
+<div class="loading" *ngIf="showLoading">
   <div class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue">
       <div class="circle-clipper left">

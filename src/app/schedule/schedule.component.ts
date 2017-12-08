@@ -13,6 +13,7 @@ import { Schedule } from './../models';
 export class ScheduleComponent implements OnInit {
 
   schedule: Schedule;
+  showLoading: boolean;
 
   get getCreatedAt(): string {
     return this.schedule ? moment(this.schedule.createdDate).format('MMM D YY HH:mm') : '';
@@ -25,10 +26,13 @@ export class ScheduleComponent implements OnInit {
   }
 
   generateSchedule() {
+    this.showLoading = true;
     this.scheduleService.generateNewSchedule().subscribe(schedule => {
       this.schedule = schedule;
+      this.showLoading = false;
     }, error => {
       this.growlService.addNewGrowl('error', 'Schedule not created', 'Error creating a new schedule');
+      this.showLoading = false;
     });
   }
 }

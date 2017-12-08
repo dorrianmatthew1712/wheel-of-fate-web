@@ -26,6 +26,7 @@ describe('ScheduleComponent', () => {
       })
       .compileComponents().then(() => {
         fixture = TestBed.createComponent(ScheduleComponent);
+        fixture.componentInstance.showLoading = false;
         fixture.detectChanges();
         fixture.whenStable().then(done);
       }).catch(error => {
@@ -54,11 +55,14 @@ describe('ScheduleComponent', () => {
 
   it('should show/hide the schedule details when schedule exists', () => {
     fixture.componentInstance.schedule = <any>{};
+    fixture.componentInstance.showLoading = false;
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#scheduleDiv')).not.toBeNull();
     expect(fixture.nativeElement.querySelector('.loading')).toBeNull();
+    expect(fixture.componentInstance.showLoading).toBeFalsy();
 
     fixture.componentInstance.schedule = null;
+    fixture.componentInstance.showLoading = true;
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelector('#scheduleDiv')).toBeNull();
     expect(fixture.nativeElement.querySelector('.loading')).not.toBeNull();

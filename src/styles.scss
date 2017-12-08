@@ -1,0 +1,35 @@
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: 'CynthoSlabPro-Regular', 'helvetica', sans-serif !important;
+    color: grey;
+    background-color: #ffffff;
+    // background-image: url("assets/images/background_computers.png");
+    background-repeat: repeat;
+    margin: 0 0 50px;
+}
+
+.bottom-footer {
+    margin-top: 15px !important;
+    background-color: transparent;
+    color: white !important;
+    font-size: 1.5em;
+    z-index: -1;
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 60px;
+    width: 100%;
+    overflow:hidden;
+}
+
+.card {
+    &:focus {
+        outline: none;
+    }
+}

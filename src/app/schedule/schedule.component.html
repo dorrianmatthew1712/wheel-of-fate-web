@@ -1,0 +1,20 @@
+<div id="scheduleDiv" *ngIf="schedule">
+  <h5 id="title">New BAU Schedule: {{ getCreatedAt }}</h5>
+
+  <div class="row">
+    <div *ngFor="let shift of schedule.shifts; let i = index" class="col s12 m3">
+      <div class="card" routerLink="schedule">
+        <div class="card-content">
+          <span class="card-title">{{ shift.engineer?.firstName + ' ' + shift.engineer?.lastName }}</span>
+          <p class="shift">Shift {{ i + 1 }} {{ i % 2 === 0 ? '(AM)' : '(PM)' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fixed-action-btn">
+    <a class="btn-floating btn-large" (click)="generateSchedule()">
+      <i class="large material-icons">autorenew</i>
+    </a>
+  </div>
+</div>

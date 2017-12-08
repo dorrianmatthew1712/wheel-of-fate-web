@@ -17,9 +17,7 @@
     "eofline": true,
     "forin": true,
     "import-blacklist": [
-      true,
-      "rxjs",
-      "rxjs/Rx"
+      true
     ],
     "import-spacing": true,
     "indent": [
@@ -127,7 +125,7 @@
     "component-selector": [
       true,
       "element",
-      "app",
+      "bau",
       "kebab-case"
     ],
     "angular-whitespace": [true, "check-interpolation"],
